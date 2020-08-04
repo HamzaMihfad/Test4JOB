@@ -1,0 +1,249 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 3px solid #3c61b9;
+    background: white;
+}
+
+header h1 a {
+    color: #f4511e;
+}
+
+header h1 a span {
+    color: #3c61b9;
+}
+
+header ul {
+    display: flex;
+    width: 350px;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+
+header li {
+    text-decoration: none;
+    border-radius: 15px;
+    height: 17px;
+}
+
+header a {
+    color: #4772d9;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+header li a {
+    margin: 8px;
+}
+
+.active a {
+    color: rgb(255, 255, 255);
+    background: #3c61b9;
+}
+
+
+
+li:hover a {
+    color: white;
+    background: #3c61b9;
+}
+
+#login {
+    border-radius: 5px;
+    border: 1px solid rgb(90, 90, 90);
+    padding: 5px;
+    /* height: 19px; */
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#login:hover {
+    background: #f4511e;
+    color: white;
+}
+
+#signup {
+    border-radius: 5px;
+    border: 1px solid rgb(90, 90, 90);
+    padding: 5px;
+    /* height: 19px; */
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#signup:hover {
+    background: #4ee45a;
+    color: white;
+}
+
+
+
+
+/* -------------------- section -------------------- */
+
+section {
+    position: relative;
+    height: 95vh;
+}
+
+#bglanding {
+    position: absolute;
+    width: 100%;
+    height: 95vh;
+}
+
+#landing {
+    margin: 0;
+    position: relative;
+    top: 170px;
+    text-align: center;
+}
+
+#landing #text {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+#landing div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 35px;
+    position: relative;
+    left: 9px;
+}
+
+.company {
+    margin: 0 20px;
+    background: #3c61b9;
+    color: white;
+    font-size: 16px;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 8px 17px;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.candidate {
+    background: #f4511e;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all 0.5s;
+    padding: 5px 13px;
+    text-align: center;
+}
+
+.button span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+    padding: 0;
+}
+
+/* ------------ main ------------ */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: #f4511e;
+    margin-top: 30px;
+}
+
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main .container .lang {
+    width: 200px;
+    height: 300px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 40px 4%;
+    border: 1px solid rgb(165, 164, 164);
+    text-align: center;
+}
+
+main .container .lang img {
+    width: 200px;
+    height: 200px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------ Footer ------------ */
+
+footer {
+    bottom: 0;
+    padding: 5px 0;
+    color: #fff;
+    background-color: #0e1124;
+    text-align: center;
+}
