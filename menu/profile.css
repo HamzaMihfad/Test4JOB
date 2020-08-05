@@ -1,19 +1,25 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
 body{
     font-family: 'Open Sans', sans-serif;   
      background: linear-gradient(to right, #9bb4c7 0%, #283269 100%);
   }
 .profile-container{
-    height: 485px;
+    height: 95%;
     width: 100%;
     margin: 20px;
-    
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly;  
 }
 .profile-menu{
-    float: left;
-    width: 300px;
-    height: 500px;
-    margin-right: 20px;
-    background: #ffffff;
+    width: 400px;
+    height: 550px;
+    background: #eeeded;
     border-radius: 25px;
 }
 .image-container{
@@ -22,13 +28,11 @@ body{
     justify-content: center;
     text-align: center;    
 }
-
 img{
     max-width: 139px;
     height: auto;
     border-radius: 50%;
 }
-
 .ul{
     list-style: none;
     padding: 0;
@@ -36,28 +40,28 @@ img{
     color: #7c7878;
 }
 .li{
-    line-height: 50px;
-    font-weight: 500;
     padding-left: 30px;
     font-size: 15px;
 }
 
 .description{
-    line-height: 15px;
     border-bottom: 1px solid #c7c5c5;
-
+    font-size: 12px;
+    padding: 0 10px 0px 7px;
+    color: rgb(8, 12, 15);
+    padding-bottom: 10px;
 }
 #description{
-font-weight: bold;
-padding-left: 10px;
-color: rgb(82, 82, 82);
-
+    font-weight: bold;
+    padding-left: 10px;
+    color: rgb(46, 46, 46);
+    line-height: 40px;
 }
+
 .email{
     margin: 5px;
     font-size: 11px;
     color: rgb(110, 108, 108);
-    
 }
 .name{
     color:#e94311;
@@ -76,15 +80,70 @@ color: rgb(82, 82, 82);
 
 }
 #active{
-    border-left: 3px solid brown;
-    font-weight: bold;
     font-size: 16px;
+    line-height: 50px;
     border-bottom: 1px solid #c7c5c5;
 
 }
-.activity{
+#active{
     font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 18px;
+    border-left: 3px solid brown;
 
 }
+
+.profile-content{
+    padding-top: 5px;
+    background-color: rgb(255, 255, 255);
+    width : 60%;
+    border-radius: 10px;
+}
+.activity{
+    font-size: 14px;
+    color: rgb(39, 39, 41);
+    margin-left: 15px;
+}
+.pic{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+label{
+    font-size: 13px;
+    margin: 20px;
+}
+input{
+    width: 340px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.adress{
+    margin-left: 20px;
+}
+#adress{
+    width: 94%;
+}
+#city{
+    width: 310px;
+}
+#state{
+    width: 230px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 10px;
+}
+#cv{
+align-self: center;
+}
+#description-input{
+    width: 94%;
+    height: 100px;
+}
+#button {
+    background-color: #4067d4; /* Green */
+    border: none;
+    color: white;
+    padding: 10px; margin: 10px;
+    align-self: flex-end;
+    text-align: center;
+    font-size: 16px;
+  }

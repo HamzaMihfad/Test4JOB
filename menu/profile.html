@@ -16,18 +16,18 @@
     <!--------------------- Header --------------------->
     <header>
         <h1>
-            <a href="./index.html"><span>TEST</span>4JOB</a>
+            <a href="../index.html"><span>TEST</span>4JOB</a>
         </h1>
         <div style="display: flex; align-items: center;">
             <nav>
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="./menu/profile.html">Test</a></li>
-                    <li><a href="./menu/about.html">About Us</a></li>
+                    <li><a href="./profile.html">Test</a></li>
+                    <li><a href="./about.html">About Us</a></li>
                 </ul>
             </nav>
-            <a href="./menu/login.html" id="login">Login</a>
-            <a href="./menu/login.html" id="signup">Sign Up</a>
+            <a href="./login.html" id="login">Login</a>
+            <a href="./login.html" id="signup">Sign Up</a>
         </div>
     </header>
     <!--------------------- profile --------------------->
@@ -42,19 +42,68 @@
 
             <ul class="ul">
                 <li class="li" id="active">Informations</li>
-                <li class="li" id="description">
-                    Description </li>
-                <div class="description">there is the description</div>
+                <li class="li" id="active">Tests</li>
+                <li class="li" id="description">Description </li>
+                <div class="description">My name is zineb ibnelamyn i'm so motivated for the job in your company,
+                    i'm
+                    serious and funny and talented and i want to work with you in any time you want i'm ready
 
-                <li class="li" style="color: darkred;">Log out</li>
+                </div>
             </ul>
         </div>
         <div class="profile-content">
             <div class="pic">
-                <span class="activity">Web Developer</span>
+                <span class="activity">Account ID : </span>
             </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                <div>
+                    <label>Email</label><br>
+                    <input placeholder="email">
+                </div>
+                <div>
+                    <label>Username</label><br>
+                    <input placeholder="username">
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                <div>
+                    <label>First Name</label><br>
+                    <input placeholder="First Name">
+                </div>
+                <div>
+                    <label>Last Name</label><br>
+                    <input placeholder="Last Name">
+                </div>
+            </div>
+            <div class="adress">
+                <label>Adress</label><br>
+                <input placeholder="Adress" id="adress">
+            </div>
+            <div style="display: flex; flex-direction: row; margin-left: 20px;">
+                <div>
+                    <label>City</label><br>
+                    <input placeholder="city" id="city">
+                </div>
+                <div>
+                    <label>State</label><br>
+                    <select id="state">
+                        <option value="" selected>Select your option</option>
+                        <option value="hurr">Durr</option>
+                    </select>
+                </div>
+                <div style="justify-content: center; align-self: center;">
+                    <label>C.V</label><br>
+                    <input id="cv" type="file">
+                </div>
+            </div>
+            <div class="adress">
+                <label>Description</label><br>
+                <input id="description-input">
+            </div>
+            <button id="button">Update profile</button>
         </div>
     </div>
+
 
     <script src="./profile.js"></script>
 </body>
