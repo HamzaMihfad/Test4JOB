@@ -7,6 +7,10 @@
 	<title>Company Sign Up</title>
 	<link rel="stylesheet" href="../style/style.css">
 	<style>
+		body {
+			background: gray;
+		}
+
 		.container {
 			font-size: 20px;
 			font-family: Helvetica, sans-serif;
@@ -54,7 +58,7 @@
 			font-size: 1.3rem;
 			font-weight: 400;
 			padding-left: 30px;
-
+			outline: none;
 		}
 
 		#input_submit {
@@ -88,17 +92,20 @@
 
 	<div class="container">
 		<h1 style="color: #f4511e; margin: 10px;">Company info: </h1>
-		<div class="flex">
+		<form action="./candidateList.html">
+			<div class="flex">
 
-			<div class="input_container">
-				<input placeholder="Company name" class='input_field'>
+				<div class="input_container">
+					<input placeholder="Company name" class='input_field'>
+				</div>
+				<div class="input_container">
+					<input placeholder="Company id" class='input_field'>
+				</div>
+				<input type="submit" value="Continue" id='input_submit' class='input_field'
+					style="cursor: pointer; margin-top: 15px;">
+
 			</div>
-			<div class="input_container">
-				<input placeholder="Company id" class='input_field'>
-			</div>
-			<input type="submit" value="Continue" id='input_submit' class='input_field'
-				style="cursor: pointer; margin-top: 15px;">
-		</div>
+		</form>
 	</div>
 
 	<!--------------------- footer --------------------->
@@ -106,7 +113,6 @@
 	<footer style="position: absolute; width: 100%;">
 		<p>Test4JOB, Copyright &copy; 2020</p>
 	</footer>
-
 </body>
 
 </html>
