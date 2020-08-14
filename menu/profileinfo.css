@@ -107,14 +107,9 @@ img{
     margin-bottom: 20px;
 }
 label{
-    font-size: 13px;
+    font-size: 14px;
     margin: 20px;
-}
-input{
-    width: 340px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 10px;
+    line-height: 35px;
 }
 .adress{
     margin-left: 20px;
