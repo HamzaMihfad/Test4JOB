@@ -7,26 +7,28 @@
     <title>Test4Job</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="./login.css">
+    <link href="../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
 </head>
 
 <body>
     <!--------------------- Header --------------------->
     <header>
-        <h1><a href="../index.html"><span>TEST</span>4JOB</a></h1>
-        <div style="display: flex; align-items: center;">
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="./test.html">Test</a></li>
-                    <li><a href="./about.html">About Us</a></li>
-                </ul>
-            </nav>
-            <a href="./signup.php" id="login">Sign Up</a>
-        </div>
-    </header>
-
-
-
+    <h1>
+      <a href="../index.php"><span>TEST</span>4JOB</a>
+    </h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <ul>
+          <li><a href="../index.php">Home</a></li>
+          <li><a href="./profileInfo.php">Test</a></li>
+          <li><a href="./about.php">About Us</a></li>
+        </ul>
+      </nav>
+      </div>
+      <div class="dropdown">
+  <a href="./signup.php" id="signup">Signup</a>
+</div>
+  </header>
     <!--------------------- section --------------------->
     <div id="form_wrapper">
         <div id="form_left">
@@ -36,58 +38,47 @@
         <form id="form_right" method="POST" action="">
             <h1 style="color: #fa5914">Sign In / Sign Up</h1>
             <div class="input_container">
-                <i class="fas fa-envelope"></i>
-                <input placeholder="Email" type="email" name="user" id="field_email" class='input_field'>
+                <i class="fas fa-envelope" id='icon'></i>
+                <input placeholder="Email / Username" required name="email" id="field_email" class='input_field'>
             </div>
             <div class="input_container">
-                <i class="fas fa-lock"></i>
-                <input placeholder="Password" type="password" name="pass" id="field_password" class='input_field'>
+                <i class="fas fa-lock" id='icon'></i>
+                <input placeholder="Password" required type="password" name="pass" id="field_password" class='input_field'>
             </div>
             <input type="submit" value="Login" id='input_submit' name='submit' class='input_field'>
             <span>Forgot <a href="#"> Username / Passwrd ?</a></span><br>
             <span id='create_account'>
-                <a href="#">Create your account ➡ </a>
+                <a href="./signup.php">Create your account ➡ </a>
             </span>
 
 <div>
-<?php  
-if(isset($_POST["submit"])){  
-  
-if(!empty($_POST['user']) && !empty($_POST['pass'])) {  
-    $user=$_POST['user'];  
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$conn = mysqli_connect($servername, $username, $password, 'user-registration');
+
+$message="";
+if(count($_POST)>0) {
+    $email=$_POST['email'];  
     $pass=$_POST['pass'];  
-  
-    $con=mysql_connect('localhost','root','') or die(mysql_error());  
-    mysql_select_db('user_registration') or die("cannot select DB");  
-  
-    $query=mysql_query("SELECT * FROM login WHERE username='".$user."' AND password='".$pass."'");  
-    $numrows=mysql_num_rows($query);  
-    if($numrows!=0)  
-    {  
-    while($row=mysql_fetch_assoc($query))  
-    {  
-    $dbusername=$row['username'];  
-    $dbpassword=$row['password'];  
-    }  
-  
-    if($user == $dbusername && $pass == $dbpassword)  
-    {  
-    session_start();  
-    $_SESSION['sess_user']=$user;  
+    $hashed = hash('sha512', $pass);
+	$result = mysqli_query($conn,"SELECT * FROM login WHERE (username='$email' OR email='$email') and password = '$hashed' ");
+    $count  = mysqli_num_rows($result);
+    echo $count;
+	if($count==0) {
+		 echo "Invalid Username or Password!";
+	} else {
+        session_start();  
+    $_SESSION['sess_user']=$email;  
   
     /* Redirect browser */  
-    header("Location: member.php");  
-    }  
-    } else {  
-    echo "Invalid username or password!";  
-    }  
-  
-} else {  
-    $error = "<div style='color: red; font-weight: bold; display: block;
-    position: relative; text-align: center'>Wrong Details</div>";
-    echo  $error;}  
-}  
+    header("Location: profileInfo.php");  
+	}
+}
 ?>
+
+
  </div>
  </form>
     </div>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test4Job</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/test.css">
+    <link rel="stylesheet" href="./PopUp/styles.css">
+    <link href="./icons/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--------------------- Header --------------------->
+    <header>
+    <h1>
+      <a href="./index.php"><span>TEST</span>4JOB</a>
+    </h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="./menu/profile.php">Test</a></li>
+          <li><a href="./menu/about.php">About Us</a></li>
+        </ul>
+      </nav>
+      </div>
+      <div>
+      <?php session_start();  
+      if(!isset($_SESSION["sess_user"])): ?>
+<div class="dropdown">
+  <p class='dropbtn' id='login'>connect</p>
+  <div class="dropdown-content">
+  <a href="./menu/login.php" id="signup">Login</a>
+  <a href="./menu/signup.php" id="signup">Sign Up</a>
+          </div>
+ <?php else: ?>
+        <div class="dropdown">
+  <i class="fas fa-user fa-lg" class='dropbtn'></i>
+  <div class="dropdown-content">
+          <a href="./menu/profile.php" id="signup">profile</a>
+          <a href="./menu/logout.php" id='signup'>Logout</a>
+          </div>
+      <?php endif; ?>
+      </div>
+    </div>
+  </header>
+    <!--------------------- section --------------------->
+    <!-- <button>Click me!</button> -->
+
+    <div style="height: 98vh;">
+        <div class="popup-wrapper">
+            <div class="popup">
+                <div class="popup-content">
+                    <h2 style="color:#f4511e;">Are you ready?</h2>
+                    <ul style="text-align: left; line-height: 23px;">
+                        <li>
+                            10 multiple choice questions will be asked.
+                        </li>
+                        <li>
+                            After validation, you will access the results page where your total will be calculated.
+                        </li>
+                        <li>
+                            The code exercises focus on the programmation languages.
+                        </li>
+                        <li>
+                            The questions are timed individually (1min). When the question time is done, you cannot get
+                            back
+                            to
+                            the previous question.
+                        </li>
+                        <li>
+                            if you cancel your test you can't retake it until 24 hours has passed.
+
+                        </li>
+                    </ul>
+
+
+                    <p style="font-weight: bold; font-size: 19px; margin-top:22px; margin-bottom: 0;"> GOOD LUCK !</p>
+                    <div style="display: flex; align-items: center;
+                    justify-content: center;">
+                        <a href="../index.html" class="later">Later</a>
+                        <button id="startTest">Start test</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section id="test">
+            <div class="testheader">
+                <img src="../img/html.png" alt="">
+                <div>
+                    <h3>HTML Test :</h3>
+                    <p> The exercises relate to HTML5 tags
+                        and the integration of audio and video content, forms...
+                    </p>
+                </div>
+            </div>
+            <form action="" id="form">
+                <div class="questions">
+                    <div class="q0">
+                        <h1>What does HTML stand for?</h1>
+                        <div class="option">
+                            <input type="radio" name="q0" value="A">
+                            <label>Home Tool Markup Language</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q0" value="B">
+                            <label>Hyperlinks and Text Markup Language</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q0" value="C">
+                            <label>Hyper Text Markup Language</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q0" value="D">
+                            <label>Hyper Text Manipulation Language</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q1">
+                        <h1>Choose the correct HTML element for the largest heading:</h1>
+                        <div class="option">
+                            <input type="radio" name="q1" value="A">
+                            <label>&lt;h1&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="B">
+                            <label>&lt;h6&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="C">
+                            <label>&lt;heading&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="D">
+                            <label>&lt;head&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q2">
+                        <h1>What is the correct HTML tag for inserting a line break?</h1>
+                        <div class="option">
+                            <input type="radio" name="q2" value="A">
+                            <label>&lt;br&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="B">
+                            <label>&lt;lb&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="C">
+                            <label>&lt;break&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="D">
+                            <label>&lt;newline&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q3">
+                        <h1>Choose the correct HTML tag to make a text bold?</h1>
+                        <div class="option">
+                            <input type="radio" name="q3" value="A">
+                            <label>&lt;b&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q3" value="B">
+                            <label>&lt;bold&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q3" value="C">
+                            <label>&lt;bb&gt;</label><br>
+                        </div>
+                        <div class="option" name="q3" value="D">
+                            <input type="radio">
+                            <label>&lt;bld&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q4">
+                        <h1>Choose the correct HTML tag to make a text italic</h1>
+                        <div class="option">
+                            <input type="radio" name="q4" value="A">
+                            <label>&lt;ii&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="B">
+                            <label>&lt;italics&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="C">
+                            <label>&lt;italic&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="D">
+                            <label>&lt;i&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q5">
+                        <h1>What is the correct HTML for making a hyperlink?</h1>
+                        <div class="option">
+                            <input type="radio" name="q5" value="A">
+                            <label>&lt;a href="https://test4job.com"&gt;Test4JOB&lt;/a&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="B">
+                            <label>&lt;a name="https://test4job.com"&gt;test4job.com&lt;/a&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="C">
+                            <label>&lt;a&gt;http://test4job.com&lt;/a&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="D">
+                            <label>&lt;a url="http://test4job.com"&gt;test4job.com&lt;/a&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q6">
+                        <h1>How can you make an e-mail link?</h1>
+                        <div class="option">
+                            <input type="radio" name="q6" value="A">
+                            <label>&lt;a href="xxx@yyy"&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="B">
+                            <label>&lt;mail href="xxx@yyy"&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="C">
+                            <label>&lt;mail&gt;xxx@yyy&lt;/mail&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="D">
+                            <label>&lt;a href="mailto:xxx@yyy"&gt;</a></label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q7">
+                        <h1>How can you make a numbered list?</h1>
+                        <div class="option">
+                            <input type="radio" name="q7" value="A">
+                            <label>&lt;list&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="B">
+                            <label>&lt;ol&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="C">
+                            <label>&lt;ul&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="D">
+                            <label>&lt;nl&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q8">
+                        <h1>Choose the correct HTML element to define important text:</h1>
+                        <div class="option">
+                            <input type="radio" name="q8" value="A">
+                            <label>&lt;b&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="B">
+                            <label>&lt;i&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="C">
+                            <label>&lt;strong&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="D">
+                            <label>&lt;important&gt;</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="q9">
+                        <h1>What is the correct HTML for making a checkbox?</h1>
+                        <div class="option">
+                            <input type="radio" name="q9" value="A">
+                            <label>&lt;input type="checkbox"&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="B">
+                            <label>&lt;checkbox&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="C">
+                            <label>&lt;check&gt;</label><br>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="D">
+                            <label>&lt;input type="check"&gt;</label> <br>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <button id="next">Next question</button>
+            <div class="timeDiv">
+                <p><b>Question: <span id="numQuestion">1</span>/10 &nbsp;&nbsp; Time left: <span
+                            id="timeLeft">01:00</span></b></p>
+            </div>
+            <div class="scoreDiv">
+                <h1>Your score: <span id="userScore">?</span>/10</h1>
+            </div>
+        </section>
+
+    </div>
+
+    <!--------------------- footer --------------------->
+
+    <footer>
+        <p>Test4JOB, Copyright &copy; 2020</p>
+    </footer>
+
+    <script src="./PopUp/popup.js"></script>
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>
