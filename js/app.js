@@ -8,7 +8,7 @@ const userScore = document.querySelector('#userScore');
 /* -------- to change the current question number -------- */
 const numQuestion = document.querySelector("#numQuestion");
 /* -------- correctAnswers -------- */
-const correctAnswers = ['C', 'A', 'A', 'A', 'D', 'A', 'D', 'B', 'C', 'A'];
+const correctAnswers = ['B', 'D', 'B', 'A', 'C', 'A', 'B', 'D', 'A', 'C'];
 let score = 0;
 
 
@@ -33,7 +33,7 @@ next.addEventListener('click', () => {
         questions.children[index].style.display = "none";
         index++;
         questions.children[index].style.display = "block";
-        numQuestion.innerHTML = `${index+1}`;
+        numQuestion.innerHTML = `${index + 1}`;
         if (index === 9)
             next.innerHTML = "Grade me!";
     } else {
@@ -59,7 +59,7 @@ function startTimer() {
                 questions.children[index].style.display = "none";
                 index++;
                 questions.children[index].style.display = "block";
-                numQuestion.innerHTML = `${index+1}`;
+                numQuestion.innerHTML = `${index + 1}`;
                 if (index === 9)
                     next.innerHTML = "Grade me!";
             } else {
