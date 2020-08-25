@@ -28,25 +28,32 @@
       </div>
       <div>
       <?php session_start();  
-      if(!isset($_SESSION["sess_user"])): ?>
+      if(isset($_SESSION["sess_user"])): ?>
 <div class="dropdown">
-  <p class='dropbtn' id='login'>connect</p>
-  <div class="dropdown-content">
-  <a href="./menu/login.php" id="signup">Login</a>
-  <a href="./menu/signup.php" id="signup">Sign Up</a>
-          </div>
- <?php else: ?>
-        <div class="dropdown">
   <i class="fas fa-user fa-lg" class='dropbtn'></i>
   <div class="dropdown-content">
           <a href="./menu/profile.php" id="signup">profile</a>
           <a href="./menu/logout.php" id='signup'>Logout</a>
+          </div>
+ <?php elseif (isset($_SESSION["sess_company"])): ?>
+  <div class="dropdown">
+  <i class="fas fa-user-tie" class='dropbtn'></i>
+  <div class="dropdown-content">
+          <a href="./menu/logout.php" id='signup'>Logout</a>
+          </div>
+          <?php else : ?>
+            <div class="dropdown">
+  <p class='dropbtn' id='login'>connect</p>
+  <div class="dropdown-content">
+  <a href="./menu/login.php" id="signup">Login</a>
+  <a href="./menu/signup.php" id="signup">Sign Up</a>
           </div>
       <?php endif; ?>
       </div>
     </div>
   </header>
 
+  
   <!--------------------- section --------------------->
   <section>
     <img src="./img/bg.png" alt="" id="bglanding" />
@@ -56,10 +63,19 @@
         THE SMART WAY
       </h2>
       <div>
-        <a href="./menu/login.php" class="candidate button"><span>Test Your Skills!</span></a>
-        <?php if(!isset($_SESSION["sess_user"])): ?>
+
+      <?php if(!isset($_SESSION["sess_company"])): ?>
+        <a href="./menu/test.php" class="candidate button"><span>Test Your Skills!</span></a>
+        <?php endif; ?>
+
+        <?php if(!isset($_SESSION["sess_user"]) && !isset($_SESSION["sess_company"])): ?>
         <a href="./menu/companySignUp.php" class="company button"><span>Are you a Company?</span></a>
         <?php endif; ?>
+
+        <?php if(isset($_SESSION["sess_company"])): ?>
+        <a href="./menu/test.php" class="company button"><span>View Test Results?</span></a>
+        <?php endif; ?>
+
       </div>
     </div>
   </section>

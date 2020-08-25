@@ -2,14 +2,20 @@ body,
 html {
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 body{
-    font-family: 'Open Sans', sans-serif;   
+    font-family: 'Roboto', 'Open Sans', sans-serif;   
      background: linear-gradient(to right, #9bb4c7 0%, #283269 100%);
   }
+ 
+  #edit-profie{
+      text-decoration: none;
+      color: white;
+  }
+  .fa-camera :hover{
+     color : red;
+  }
 .profile-container{
-    height: 95%;
     width: 100%;
     margin: 20px;
     display: flex;
@@ -17,20 +23,19 @@ body{
     justify-content: space-evenly;  
 }
 .profile-menu{
-    width: 400px;
-    height: 550px;
-    background: #eeeded;
-    border-radius: 25px;
+    padding: 20px 5px 0 0 ;
+    width: 49%;
+    border-radius: 15px;
 }
 .image-container{
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: center;
     text-align: center;    
 }
 img{
-    max-width: 139px;
-    height: auto;
+    max-width: 200px;
+    height: 160px;
     border-radius: 50%;
 }
 .ul{
@@ -66,7 +71,6 @@ img{
 .name{
     color:#e94311;
     margin: 5px;
-    
 }
 .username{
     font-size: 14px;
@@ -90,12 +94,15 @@ img{
     border-left: 3px solid brown;
 
 }
+#cam_icon {
+    cursor: pointer;
+}
 
 .profile-content{
-    padding-top: 5px;
-    background-color: rgb(255, 255, 255);
-    width : 60%;
-    border-radius: 10px;
+    padding-top: 33px;
+    padding-left: 22px;
+    width: 49%;
+    border-radius: 15px;
 }
 .activity{
     font-size: 14px;
@@ -110,6 +117,7 @@ label{
     font-size: 14px;
     margin: 20px;
     line-height: 35px;
+    font-weight: bold;
 }
 .adress{
     margin-left: 20px;
@@ -134,11 +142,45 @@ align-self: center;
     height: 100px;
 }
 #button {
-    background-color: #119e40; 
+    background-color: #2a36e0; 
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     padding: 10px; margin: 10px;
     text-align: center;
     font-size: 16px;
+  }
+
+  .label{
+    font-weight: 400;
+    color: rgb(70, 67, 67);
+  }
+  
+  #card{
+      background: rgb(255, 255, 255);
+      width: 60vw;
+      border-radius: 10px;
+  }
+  input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 ;
+}
+
+  .top{
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+  }
+  #buttonid{
+    background-color: unset;
+    border: none;
+  }
+  .btn{
+    background-color: unset;
+border-width: 1px;
+      cursor: pointer;
   }

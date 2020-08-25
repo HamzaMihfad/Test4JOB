@@ -74,14 +74,16 @@ if(!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_POST['email'])) 
     $con=mysqli_connect('localhost','root','', 'user-registration') ;  
   
     $query=mysqli_query($con,"SELECT * FROM login WHERE username='".$user."' OR email='".$email."'");  
-    $numrows=mysqli_num_rows($query);  
+  
+    $numrows=mysqli_num_rows($query);  //numrows=0 : user is not in login table
    
     if($numrows==0 && count($_POST)>0) 
     {  
         
-            if(empty($password_err) && ($pass != $confirm_password)){
+            if($pass != $confirm_password){
                 echo "Password did not match.";
             }
+
         else {
         $hashed = hash('sha512', $pass);
     $sql="INSERT INTO login(email,username,password) VALUES('$email','$user','$hashed')";  
@@ -109,14 +111,14 @@ if(!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_POST['email'])) 
     </script>");  
     }   
  
-} else {  
+} 
+else {  
     $error = "<div style='color: red; font-weight: bold; display: block;
     position: relative; text-align: center'>All fields are required</div>";
     echo  $error;  
 }  
 
 }  
-mysqli_close($con);
 ?>
 </div>
 </form>

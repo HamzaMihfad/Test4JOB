@@ -3,6 +3,14 @@ session_start();
 if(!isset($_SESSION["sess_user"])){  
     header("location:login.php");  
 }  
+else {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $conn = mysqli_connect($servername, $username, $password, 'user-registration');
+    $result = mysqli_query($conn,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."'");
+    $row = mysqli_fetch_array($result);
+    }
 ?>  
 <!DOCTYPE html>
 <html lang="en">
@@ -22,96 +30,228 @@ if(!isset($_SESSION["sess_user"])){
     <!--------------------- Header --------------------->
     <header>
         <h1>
-            <a href="../index.php"><span>TEST</span>4JOB</a>
+          <a href="../index.php"><span>TEST</span>4JOB</a>
         </h1>
         <div style="display: flex; align-items: center;">
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="./profile.php">Test</a></li>
-                    <li><a href="./about.php">About Us</a></li>
-                </ul>
-            </nav>
-            <a href="./login.php" id="login">Login</a>
-            <a href="./signup.php" id="signup">Sign Up</a>
+          <nav>
+            <ul>
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="./profile.php">Test</a></li>
+              <li><a href="./about.php">About Us</a></li>
+            </ul>
+          </nav>
+          </div>
+          <div>
+          
+            <div class="dropdown">
+      <i class="fas fa-user fa-lg" class='dropbtn'></i>
+      <div class="dropdown-content">
+              <a href="./profileInfo.php" id="signup">profile</a>
+              <a href="./logout.php" id='signup'>Logout</a>
+              </div>
         </div>
-    </header>
+      </header>
     <!--------------------- profile --------------------->
     <div class="profile-container">
         <div class="profile-menu">
             <div class="image-container">
                 <img src="../img/me.jpg " alt="zeinab">
-                <h4 class="name">Zeinab</h2>
-                    <p class="email">zineb.ibnelamyne@gmail.com</p>
-                    <p class="username">zeinab.org</p>
+                <h4 class="name"><?php
+                $user = $row['first_name'];
+               echo "$user" ?></h2>
+                    <p class="email"> <?php
+                $user = $row['email'];
+               echo "$user" ?></p>
+                    <p class="username"><?php
+                $user = $row['username'];
+               echo "$user" ?></p>
             </div>
 
             <ul class="ul">
                 <li class="li" id="active">Informations</li>
                 <li class="li" id="active">Tests</li>
                 <li class="li" id="description">Description </li>
-                <div class="description">My name is zineb ibnelamyn i'm so motivated for the job in your company,
-                    i'm
-                    serious and funny and talented and i want to work with you in any time you want i'm ready
-
+                <div class="description">
+                <?php
+                $user = $row['description'];
+               echo "$user" ?>
                 </div>
             </ul>
         </div>
+
         <div class="profile-content">
+        <form  method="POST" enctype="multipart/form-data">
             <div class="pic">
                 <span class="activity">Account ID : </span>
             </div>
-            <div style="display: flex; flex-direction: row; justify-content: space-around;">
-                <div>
-                    <label>Email</label><br>
-                    <input placeholder="email">
-                </div>
-                <div>
-                    <label>Username</label><br>
-                    <input placeholder="username">
-                </div>
-            </div>
-            <div style="display: flex; flex-direction: row; justify-content: space-around;">
-                <div>
+            
+           
+                <div class="input">
                     <label>First Name</label><br>
-                    <input placeholder="First Name">
+                    <?php
+                    $user = $row['first_name'] ;
+                    if ( $user == '' )
+                     {
+               echo "<input placeholder='First Name'  name='first_name'>";}
+               else {
+                echo '<input value='.$user.' name="first_name">'; 
+               } ?>        
                 </div>
-                <div>
+                <div class="input">
                     <label>Last Name</label><br>
-                    <input placeholder="Last Name">
+                    <?php
+                    $user = $row['last_name'] ;
+                    if ( $user == '' )
+                     {
+               echo "<input placeholder='Last Name' name='last_name'>";}
+               else {
+                echo '<input value='.$user.' name="last_name">'; 
+               } 
+            
+               ?>
                 </div>
-            </div>
-            <div class="adress">
+           
+            <div class="input">
                 <label>Adress</label><br>
-                <input placeholder="Adress" id="adress">
+                <?php
+                    $user = $row['adress'] ;
+                    if ( $user == '' )
+                     {
+               echo "<input placeholder='Adress' id='adress' name='adress'>";}
+               else {
+                echo '<input value='.$user.' id="adress" name="adress">'; 
+               } 
+            
+               ?>
             </div>
             <div style="display: flex; flex-direction: row; margin-left: 20px;">
                 <div style=" margin-right: 20px;">
                     <label>City</label><br>
-                    <input placeholder="city" id="city">
+                    <?php
+                    $user = $row['city'] ;
+                    if ( $user == '' )
+                     {
+               echo "<input placeholder='City' id='city' name='city'>";}
+               else {
+                echo '<input value='.$user.' id="city" name="city">'; 
+               } 
+            
+               ?>
                 </div>
                 <div style=" margin-right: 20px;">
                     <label>State</label><br>
-                    <select id="state">
-                        <option value="" selected>Select your option</option>
+                    <select id="state" name='state'>
+                    <?php
+                    $user = $row['state'] ;
+                    if ( $user == '' )
+                     {
+               echo "<option value='' selected> Select your option</option>";}
+               else {
+                echo "<option value=".$user." selected>".$user."</option>"; 
+               } 
+               ?>
                         <option value="hurr">Durr</option>
+                        <option value="opt2">opt2</option>
+                        <option value="opt3">opt3</option>
+                        <option value="opt4">opt4</option>
+
                     </select>
                 </div>
                 <div style="justify-content: center; align-self: center;">
-                    <label>C.V</label><br>
-                    <input id="cv" type="file">
+                    <label>upload your CV (.pdf)</label><br>
+                    <input id="cv" type="file" name='file' accept="application/pdf">
                 </div>
+               
             </div>
-            <div class="adress">
+            <div class="desc">
                 <label>Description</label><br>
-                <input id="description-input">
+                <?php
+                    $user = $row['description'] ;
+                    if ( $user == '' )
+                     {
+               echo "<textarea rows='10'  cols='35' id='description-input' name='description'></textarea>";}
+               else {
+                echo '<textarea rows="10"  cols="35" value='.$user.' id="description-input" name="description"></textarea>'; 
+               } ?>
+               
             </div>
-            <form action="./profileInfo.php">
-                <button id="button">Save changes</button>
+           
+                <input type="submit" id="button" name="submit" value ="Save changes">
             </form>
         </div>
+    
     </div>
-    <script src="./profile.js"></script>
+    <div>
+    <?php  
+if(isset($_POST["submit"]))
+{    
+    
+    $first_name=$_POST['first_name'];
+    $last_name=$_POST['last_name'];
+    $adress=$_POST['adress'];
+    $city=$_POST['city'];
+    $state=$_POST['state'];
+    $description=$_POST['description'];
+   
+
+    $sql="UPDATE user_info
+    SET 
+        first_name = '$first_name',
+        last_name = '$last_name',
+        adress = '$adress',
+        city = '$city',
+        state = '$state',
+        description = '$description'
+
+    WHERE (username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."')";  
+    $result = mysqli_query($conn,$sql);
+
+                    if($_FILES['file']['size'] > 0)
+                    {
+                        $file=$_FILES['file'];
+                        $fileName=$_FILES['file']['name'];
+                        $tmpName=$_FILES['file']['tmp_name'];
+                        $tmp = explode('.', $fileName);
+                        $file_ext = end($tmp);
+                        // target directory 
+                        $target_dir = "../CVs/"; 
+                        $extensions= array("pdf");
+                        
+                        if(in_array($file_ext,$extensions)=== false && $file_ext!= ''){
+                            $errors[]="extension not allowed, please choose a pdf file.";
+                        }
+                        if(empty($errors)) 
+                        { 
+                        $cv = "../CVs/".$row['username'].'.'.$file_ext;
+                        move_uploaded_file($tmpName,$cv);
+                
+                        $sql="UPDATE user_info SET  
+                         cv_name = '$fileName',
+                         cv_content = '$cv'
+                         WHERE (username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."')";  
+                         $resulti = mysqli_query($conn,$sql);
+                            if(!$resulti)
+                            echo "<div style='color: red; font-weight: bold; display: block;
+                            position: relative; text-align: center'>okey</div>";
+                    }
+                }
+
+    if($result)
+    echo ("<script LANGUAGE='JavaScript'>
+    alert('Succesfully updates profile');
+    window.location.href='./profileInfo.php';
+    </script>");
+    else {  
+        $message = "<div style='color: red; font-weight: bold; display: block;
+        position: relative; text-align: center'>failure</div>";
+        echo  $message;  
+    }  
+}
+    ?>
+    </div>
+    <footer>
+        <p>Test4JOB, Copyright &copy; 2020</p>
+    </footer>
 </body>
 
 </html>

@@ -2,7 +2,6 @@ body,
 html {
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 body{
     font-family: 'Open Sans', sans-serif;   
@@ -73,7 +72,7 @@ img{
     margin: 5px;
     display: inline-block;
     border: 2px solid;
-    padding: 8px;
+    padding: 5px;
     border-radius: 25px;
     border-color: rgb(40, 40, 138);
     color: rgb(12, 12, 107);
@@ -109,28 +108,19 @@ img{
 label{
     font-size: 14px;
     margin: 20px;
-    color: rgb(122, 11, 11);
+    line-height: 35px;
 }
-input{
-    width: 340px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 10px;
-}
-.input{
+.adress{
     margin-left: 20px;
 }
 #adress{
     width: 94%;
 }
-.desc{
-    margin-left: 22px;
-}
 #city{
-    width: 100%;
+    width: 310px;
 }
 #state{
-    width: 120px;
+    width: 230px;
     height: 35px;
     border-radius: 5px;
     margin: 10px;

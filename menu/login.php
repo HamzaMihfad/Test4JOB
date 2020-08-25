@@ -65,13 +65,11 @@ if(count($_POST)>0) {
     $hashed = hash('sha512', $pass);
 	$result = mysqli_query($conn,"SELECT * FROM login WHERE (username='$email' OR email='$email') and password = '$hashed' ");
     $count  = mysqli_num_rows($result);
-    echo $count;
 	if($count==0) {
 		 echo "Invalid Username or Password!";
 	} else {
-        session_start();  
+    session_start();  
     $_SESSION['sess_user']=$email;  
-  
     /* Redirect browser */  
     header("Location: profileInfo.php");  
 	}
