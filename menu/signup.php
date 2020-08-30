@@ -71,7 +71,7 @@ if(!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_POST['email'])) 
     $user=$_POST['user']; 
     $pass=$_POST['pass'];  
     $confirm_password=$_POST["confirm_password"];
-    $con=mysqli_connect('localhost','root','', 'user-registration') ;  
+    $con=mysqli_connect('localhost','root','', 'test4job') ;  
   
     $query=mysqli_query($con,"SELECT * FROM login WHERE username='".$user."' OR email='".$email."'");  
   

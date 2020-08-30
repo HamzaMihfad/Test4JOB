@@ -33,14 +33,14 @@
 <div class="dropdown">
   <i class="fas fa-user fa-lg" class='dropbtn'></i>
   <div class="dropdown-content">
-          <a href="./menu/profile.php" id="signup">profile</a>
-          <a href="./menu/logout.php" id='signup'>Logout</a>
+          <a href="./profileInfo.php" id="signup">profile</a>
+          <a href="./logout.php" id='signup'>Logout</a>
           </div>
  <?php elseif (isset($_SESSION["sess_company"])): ?>
   <div class="dropdown">
   <i class="fas fa-user-tie" class='dropbtn'></i>
   <div class="dropdown-content">
-          <a href="./menu/logout.php" id='signup'>Logout</a>
+          <a href="./logout.php" id='signup'>Logout</a>
           </div>
           <?php else : ?>
             <div class="dropdown">

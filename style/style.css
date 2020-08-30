@@ -61,7 +61,7 @@ header a {
 
 
 
-li:hover a {
+header li:hover a {
     color: white;
     background: #3c61b9;
 }
@@ -168,6 +168,11 @@ section {
     left: 9px;
 }
 
+    strong {
+        font-weight: 700;
+        }
+
+
 .company {
     margin: 0 20px;
     background: #3c61b9;
@@ -236,7 +241,7 @@ main .container {
 
 main .container .lang {
     width: 200px;
-    height: 300px;
+    height: 250px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 40px 4%;
@@ -249,28 +254,120 @@ main .container .lang img {
     height: 200px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+main .container .lang:hover {
+    border: 2px solid rgb(78, 78, 78);
+
+}
+footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+   height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.separator{
+border: .5px solid wheat;
+}
 
 /* ------------ Footer ------------ */
+
+.site-footer
+{
+    margin-top : 20px ;
+  background-color:#0e1124;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 10px;
+}
+.text-justify{
+    max-width: 500px;
+}
+
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin :5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+  text-decoration: none;
+  line-height:40px;
+
+}
+.site-footer a:hover
+{
+  color:#a5bff5;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+
+.site-footer .social-icons
+{
+  text-align:center;
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:30px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#bac5c9
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.GitHub:hover
+{
+  background-color:#639ce6
+}
+
+
 
 footer {
     bottom: 0;

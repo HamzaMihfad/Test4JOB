@@ -5,12 +5,35 @@ const test = document.querySelector('#test');
 const timeDiv = document.querySelector('.timeDiv');
 const scoreDiv = document.querySelector('.scoreDiv');
 const userScore = document.querySelector('#userScore');
+
+const lang = document.getElementById("lang").innerHTML;
 /* -------- to change the current question number -------- */
 const numQuestion = document.querySelector("#numQuestion");
 /* -------- correctAnswers -------- */
-const correctAnswers = ['B', 'D', 'B', 'A', 'C', 'A', 'B', 'D', 'A', 'C'];
-let score = 0;
+let correctAnswers;
+const htmlAnswers = ['B', 'D', 'B', 'A', 'C', 'A', 'B', 'D', 'A', 'C'];
+const jsAnswers = ['B', 'C', 'B', 'D', 'C', 'B', 'B', 'B', 'D', 'C'];
+const sqlAnswers = ['B', 'B', 'D', 'A', 'C', 'A', 'A', 'D', 'A', 'A'];
+const phpAnswers = ['A', 'B', 'D', 'C', 'C', 'D', 'B', 'A', 'B', 'C'];
 
+switch (lang) {
+    case 'HTML':
+        correctAnswers = htmlAnswers;
+        break;
+    case 'JavaScript':
+        correctAnswers = jsAnswers;
+        break;
+    case 'SQL':
+        correctAnswers = sqlAnswers;
+        break;
+    case 'PHP':
+        correctAnswers = phpAnswers;
+        break;
+    default:
+        console.log('something wrong!');
+}
+
+let score = 0;
 
 startTest.addEventListener('click', () => {
     popupw.style.display = 'none';
@@ -75,6 +98,16 @@ function startTimer() {
                         score++;
                 });
                 userScore.innerHTML = `${score}`;
+
+                // ---------- insert score ----------
+                const data = new FormData();
+                data.append('score', score);
+                data.append('lang', lang);
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "insertResult.php", true);
+                xhr.send(data);
+
             }
         }
 

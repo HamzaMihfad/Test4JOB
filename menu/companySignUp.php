@@ -1,6 +1,6 @@
 <?php   
 session_start();  
-if(!isset($_SESSION["sess_user"]) || (!isset($_SESSION["sess_company"])))
+if(isset($_SESSION["sess_user"]) || (isset($_SESSION["sess_company"])))
 {  
     header("location:../index.php");  
 }  
@@ -79,7 +79,7 @@ if(!empty($_POST['company_name']) && !empty($_POST['company_id']))
     $name=$_POST['company_name'];  
     $id=$_POST['company_id']; 
     
-    $conn=mysqli_connect('localhost','root','', 'user-registration') ;  
+    $conn=mysqli_connect('localhost','root','', 'test4job') ;  
   
     $query=mysqli_query($conn,"SELECT * FROM company_registration WHERE company_name='".$name."' AND company_id='".$id."'");  
     $queryOR=mysqli_query($conn,"SELECT * FROM company_registration WHERE company_name='".$name."' OR company_id='".$id."'");  

@@ -29,8 +29,8 @@ body{
     text-align: center;    
 }
 img{
-    max-width: 139px;
-    height: auto;
+    max-width: 160px;
+    height: 160px;
     border-radius: 50%;
 }
 .ul{
@@ -102,6 +102,9 @@ img{
     color: rgb(39, 39, 41);
     margin-left: 15px;
 }
+form {
+    padding-top: 20px;
+}
 .pic{
     margin: 10px;
     margin-bottom: 20px;
@@ -142,12 +145,36 @@ align-self: center;
     width: 94%;
     height: 100px;
 }
-#button {
+#button, #cancel {
     background-color: #119e40; 
     border: none;
     border-radius: 10px;
     color: white;
-    padding: 10px; margin: 10px;
-    text-align: center;
+    width: 40%;
+    margin: 10px;
     font-size: 16px;
+    height: 40px;
+    cursor: pointer;
   }
+  #button:hover {
+    background-color: rgb(12, 122, 18);
+}
+  #cancel{
+    background-color: #636969; 
+    text-shadow: 1px 1px 1px #000;
+    height: 40px;
+    padding : 0;
+  }
+  a {
+    text-align: center;
+    color:white;
+    text-decoration: none; /* no underline */
+    justify-content: center; 
+}
+  #cancel:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+#cancel:hover {
+    background-color: rgb(24, 22, 22);
+}

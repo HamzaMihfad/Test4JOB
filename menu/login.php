@@ -56,20 +56,21 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$conn = mysqli_connect($servername, $username, $password, 'user-registration');
+$conn = mysqli_connect($servername, $username, $password, 'test4job');
 
 $message="";
 if(count($_POST)>0) {
     $email=$_POST['email'];  
     $pass=$_POST['pass'];  
     $hashed = hash('sha512', $pass);
-	$result = mysqli_query($conn,"SELECT * FROM login WHERE (username='$email' OR email='$email') and password = '$hashed' ");
+	$result = mysqli_query($conn,"SELECT username FROM login WHERE (username='$email' OR email='$email') and password = '$hashed' ");
     $count  = mysqli_num_rows($result);
 	if($count==0) {
 		 echo "Invalid Username or Password!";
 	} else {
-    session_start();  
-    $_SESSION['sess_user']=$email;  
+    session_start(); 
+    $row = mysqli_fetch_array($result); 
+    $_SESSION['sess_user']= $row['username'];;  
     /* Redirect browser */  
     header("Location: profileInfo.php");  
 	}

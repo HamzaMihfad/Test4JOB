@@ -8,8 +8,8 @@ else {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$conn = mysqli_connect($servername, $username, $password, 'user-registration');
-$result = mysqli_query($conn,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."'");
+$conn = mysqli_connect($servername, $username, $password, 'test4job');
+$result = mysqli_query($conn,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."'");
 $row = mysqli_fetch_array($result);
 }
 ?> 
@@ -65,7 +65,7 @@ $row = mysqli_fetch_array($result);
                     <div class="image-container">
                     <?php
                         $getimg = mysqli_query($conn,"SELECT profile_img FROM user_info 
-                        WHERE username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."'");
+                        WHERE username = '".$_SESSION['sess_user']."'");
                         $rows=mysqli_fetch_array($getimg);
                         $img = $rows['profile_img'];
                         if($img != '') :
@@ -98,23 +98,25 @@ if(isset($_POST["submit"]))
 		// target directory 
 		$target_dir = "../uploads/"; 
         $extensions= array("jpeg","jpg","png");
+
         if(in_array($file_ext,$extensions)==false && $file_ext!= ''){
             $errors[]="extension not allowed, please choose a JPEG or PNG file.";
          }
    
-         if($file_size > 2097152) {
-            $errors[]='File size must be 2 MB';
-         }
    
 		// uploding file 
 		if(empty($errors)) 
 		{ 
             $img = "../uploads/".$row['username'].'.'.$file_ext;
+            if(file_exists($img)) {
+                chmod($img,0755); //Change the file permissions if allowed
+                unlink('$img'); //remove the file
+            }
             move_uploaded_file($file_tmp_name,$img);
 
 			// query 
 			$sql = "UPDATE user_info SET profile_img = '$img'
-            WHERE (username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."')";  
+            WHERE (username = '".$_SESSION['sess_user']."')";  
 
 			// run query 
 			$r = mysqli_query($conn,$sql); 
@@ -141,7 +143,7 @@ if(isset($_POST["submit"]))
                     </div>
                     <ul class="ul">
                         <li class="li" id="active">Informations</li>
-                        <li class="li" id="active">Tests</li>
+                        <a href="./profileresult.php"><li class="li" id="noactive">Tests</li></a>
                         <li class="li" id="description">Description </li>
                         <div class="description">  <?php
                 $user = $row['description'];

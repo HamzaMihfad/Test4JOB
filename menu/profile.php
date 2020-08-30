@@ -7,8 +7,8 @@ else {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $conn = mysqli_connect($servername, $username, $password, 'user-registration');
-    $result = mysqli_query($conn,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."'");
+    $conn = mysqli_connect($servername, $username, $password, 'test4job');
+    $result = mysqli_query($conn,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."'");
     $row = mysqli_fetch_array($result);
     }
 ?>  
@@ -55,7 +55,17 @@ else {
     <div class="profile-container">
         <div class="profile-menu">
             <div class="image-container">
-                <img src="../img/me.jpg " alt="zeinab">
+                        <?php
+                        $getimg = mysqli_query($conn,"SELECT profile_img FROM user_info 
+                        WHERE username = '".$_SESSION['sess_user']."'");
+                        $rows=mysqli_fetch_array($getimg);
+                        $img = $rows['profile_img'];
+                        if($img != '') :
+                        ?>
+                        <img src="<?php echo $img?>"  alt="<?php echo $img ?>">
+                        <?php else : ?>
+                            <img src="../img/avatar.png"  alt="avatar">
+                            <?php endif?>
                 <h4 class="name"><?php
                 $user = $row['first_name'];
                echo "$user" ?></h2>
@@ -81,11 +91,7 @@ else {
 
         <div class="profile-content">
         <form  method="POST" enctype="multipart/form-data">
-            <div class="pic">
-                <span class="activity">Account ID : </span>
-            </div>
             
-           
                 <div class="input">
                     <label>First Name</label><br>
                     <?php
@@ -173,10 +179,14 @@ else {
                else {
                 echo '<textarea rows="10"  cols="35" value='.$user.' id="description-input" name="description"></textarea>'; 
                } ?>
-               
+
             </div>
-           
+           <div style="display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly" >
                 <input type="submit" id="button" name="submit" value ="Save changes">
+                <a id="cancel" name="cancel" style="text-align:center;justify-content:center" href='./profileInfo.php'>Cancel</a>
+                </div>
             </form>
         </div>
     
@@ -203,7 +213,7 @@ if(isset($_POST["submit"]))
         state = '$state',
         description = '$description'
 
-    WHERE (username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."')";  
+    WHERE (username = '".$_SESSION['sess_user']."')";  
     $result = mysqli_query($conn,$sql);
 
                     if($_FILES['file']['size'] > 0)
@@ -225,16 +235,16 @@ if(isset($_POST["submit"]))
                         $cv = "../CVs/".$row['username'].'.'.$file_ext;
                         move_uploaded_file($tmpName,$cv);
                 
-                        $sql="UPDATE user_info SET  
+                        $sqli="UPDATE user_info SET  
                          cv_name = '$fileName',
                          cv_content = '$cv'
-                         WHERE (username = '".$_SESSION['sess_user']."' OR email = '".$_SESSION['sess_user']."')";  
-                         $resulti = mysqli_query($conn,$sql);
+                         WHERE (username = '".$_SESSION['sess_user']."')";  
+                         $resulti = mysqli_query($conn,$sqli);
                             if(!$resulti)
                             echo "<div style='color: red; font-weight: bold; display: block;
                             position: relative; text-align: center'>okey</div>";
+                        }
                     }
-                }
 
     if($result)
     echo ("<script LANGUAGE='JavaScript'>

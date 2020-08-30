@@ -5,10 +5,8 @@ if(!isset($_SESSION["sess_user"])){
 }  
     try
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $connection = mysqli_connect($servername, $username, $password, 'test4job');    }
+        $connection = mysqli_connect('localhost','root', '', 'test4job');
+    }
     catch(Exception $e)
     {
       die($e->getMessage());
@@ -23,11 +21,11 @@ if(!isset($_SESSION["sess_user"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test4Job</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/test.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" href="../../style/test.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <link rel="stylesheet" href="./PopUp/styles.css">
+    <link href="../../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link rel="stylesheet" href="../PopUp/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 </head>
@@ -36,14 +34,14 @@ if(!isset($_SESSION["sess_user"])){
     <!--------------------- Header --------------------->
     <header>
         <h1>
-          <a href="../index.php"><span>TEST</span>4JOB</a>
+          <a href="../../index.php"><span>TEST</span>4JOB</a>
         </h1>
         <div style="display: flex; align-items: center;">
           <nav>
             <ul>
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="./profile.php">Test</a></li>
-              <li><a href="./about.php">About Us</a></li>
+              <li><a href="../../index.php">Home</a></li>
+              <li><a href="../profile.php">Test</a></li>
+              <li><a href="../about.php">About Us</a></li>
             </ul>
           </nav>
           </div>
@@ -52,8 +50,8 @@ if(!isset($_SESSION["sess_user"])){
             <div class="dropdown">
       <i class="fas fa-user fa-lg" class='dropbtn'></i>
       <div class="dropdown-content">
-              <a href="./profileInfo.php" id="signup">profile</a>
-              <a href="./logout.php" id='signup'>Logout</a>
+              <a href="../profileInfo.php" id="signup">profile</a>
+              <a href="../logout.php" id='signup'>Logout</a>
               </div>
         </div>
       </header>
@@ -92,7 +90,7 @@ if(!isset($_SESSION["sess_user"])){
                     <p style="font-weight: bold; font-size: 19px; margin-top:22px; margin-bottom: 0;"> GOOD LUCK !</p>
                     <div style="display: flex; align-items: center;
                     justify-content: center;">
-                        <a href="../index.php" class="later">Later</a>
+                        <a href="../../index.php" class="later">Later</a>
                         <button id="startTest">Start test</button>
                     </div>
 
@@ -104,7 +102,7 @@ if(!isset($_SESSION["sess_user"])){
             <div class="testheader">
                 <img src="../img/html.png" alt="">
                 <div>
-                    <h3>HTML Test :</h3>
+                    <h3><span id="lang">HTML</span> Test :</h3>
                     <p> The exercises relate to HTML5 tags
                         and the integration of audio and video content, forms...
                     </p>
@@ -115,14 +113,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q0">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 0"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 0"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q0" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 0");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 0");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -156,14 +154,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q1">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 1"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 1"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q1" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 1");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 1");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -197,14 +195,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q2">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 2"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 2"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q2" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 2");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 2");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -238,14 +236,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q3">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 3"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 3"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q3" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 3");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 3");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -279,14 +277,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q4">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 4"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 4"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q4" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 4");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 4");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -320,14 +318,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q5">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 5"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 5"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q5" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 5");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 5");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -361,14 +359,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q6">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 6"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 6"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q6" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 6");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 6");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -402,14 +400,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q7">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 7"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 7"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q7" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 7");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 7");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -443,14 +441,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q8">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 8"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 8"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q8" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 8");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 8");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -484,14 +482,14 @@ if(!isset($_SESSION["sess_user"])){
                     <div class="q9">
                         <h1>
                             <?php
-                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM questions WHERE lang = 'html' and num = 9"))['question'];
+                                echo mysqli_fetch_array(mysqli_query($connection,"SELECT question FROM html WHERE  num = 9"))['question'];
                             ?>
                         </h1>
                         <div class="option">
                             <input type="radio" name="q9" value="A">
                             <label>
                                 <?php
-                                $reslut = mysqli_query($connection,"SELECT choices FROM questions WHERE lang = 'html' and num = 9");
+                                $reslut = mysqli_query($connection,"SELECT choices FROM html WHERE  num = 9");
                                 echo mysqli_fetch_array($reslut)['choices'];
                             ?>
                             </label><br>
@@ -542,8 +540,8 @@ if(!isset($_SESSION["sess_user"])){
         <p>Test4JOB, Copyright &copy; 2020</p>
     </footer>
 
-    <script src="./PopUp/popup.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../PopUp/popup.js"></script>
+    <script src="../../js/app.js"></script>
 
 </body>
 

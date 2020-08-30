@@ -34,7 +34,7 @@ body{
     text-align: center;    
 }
 img{
-    max-width: 200px;
+    width: 160px;
     height: 160px;
     border-radius: 50%;
 }
@@ -83,15 +83,27 @@ img{
     color: rgb(12, 12, 107);
 
 }
-#active{
-    font-size: 16px;
+#active {
+    font-size: 17px;
     line-height: 50px;
     border-bottom: 1px solid #c7c5c5;
+    border-left: 5px solid rgb(50, 50, 95);
+    color: rgb(30, 30, 31);
 
 }
-#active{
-    font-weight: bold;
-    border-left: 3px solid brown;
+a {
+    text-decoration: none;
+    color:#7c7878;
+}
+#noactive {
+    font-size: 16px;
+    line-height: 50px;
+}
+
+#noactive:hover { 
+background-color: rgb(50, 50, 95);
+color: darkgray;
+font-weight: bold;
 
 }
 #cam_icon {

@@ -21,7 +21,7 @@
       <nav>
         <ul>
           <li class="active"><a href="">Home</a></li>
-          <li><a href="./menu/profile.php">Test</a></li>
+          <li><a href="./menu/contactUs.html">Test</a></li>
           <li><a href="./menu/about.php">About Us</a></li>
         </ul>
       </nav>
@@ -32,7 +32,7 @@
 <div class="dropdown">
   <i class="fas fa-user fa-lg" class='dropbtn'></i>
   <div class="dropdown-content">
-          <a href="./menu/profile.php" id="signup">profile</a>
+          <a href="./menu/profileInfo.php" id="signup">profile</a>
           <a href="./menu/logout.php" id='signup'>Logout</a>
           </div>
  <?php elseif (isset($_SESSION["sess_company"])): ?>
@@ -64,16 +64,18 @@
       </h2>
       <div>
 
-      <?php if(!isset($_SESSION["sess_company"])): ?>
-        <a href="./menu/test.php" class="candidate button"><span>Test Your Skills!</span></a>
+      <?php if(isset($_SESSION["sess_user"])): ?>
+       
+        <a href="./menu/listlanguage.php" class="candidate button"><span>Test Your Skills!</span></a>
         <?php endif; ?>
 
         <?php if(!isset($_SESSION["sess_user"]) && !isset($_SESSION["sess_company"])): ?>
-        <a href="./menu/companySignUp.php" class="company button"><span>Are you a Company?</span></a>
+          <a href="./menu/listlanguage.php" class="candidate button"><span>Test Your Skills!</span></a>
+          <a href="./menu/companySignUp.php" class="company button"><span>Are you a Company?</span></a>
         <?php endif; ?>
 
         <?php if(isset($_SESSION["sess_company"])): ?>
-        <a href="./menu/test.php" class="company button"><span>View Test Results?</span></a>
+        <a href="./menu/candidatelist.html" class="company button"><span>View Test Results?</span></a>
         <?php endif; ?>
 
       </div>
@@ -108,6 +110,41 @@
       </div>
     </div>
   </main>
+   <!-- Site footer -->
+   <div class="site-footer">          
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Test4Code is an initiative  to help the upcoming programmers with finding a propriate job. 
+              test4job focuses on providing the most efficient tests.
+               We will help programmers build up concepts in different programming languages that include
+                JavaScript, SQL, HTML, CSS, PHP, SQL ...
+              Also we give the recuters the possibility to find their wanted condidats </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a >JS</a></li>
+              <li><a >HTML</a></li>
+              <li><a >PHP</a></li>
+              <li><a>SQL</a></li>
+            
+            </ul>
+          </div>
+ 
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+          <h6>Contact Us</h6>
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><img src="https://img.icons8.com/color/40/000000/facebook-new.png"/></a></li>
+              <li><a class="twitter" href="#"><img src="https://img.icons8.com/color/39/000000/twitter.png"/></a></li>
+              <li><a class="GitHub" href="#"><img src="https://img.icons8.com/color/39/000000/github.png"/></a></li>
+              <li><a class="linkedin" href="#"><img src="https://img.icons8.com/color/39/000000/linkedin-circled.png"/></a></li>   
+            </ul>
+          </div>
+
+      </div>
+      <div class="separator"></div>
 
   <!--------------------- footer --------------------->
 
