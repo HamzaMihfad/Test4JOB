@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test4Job</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./service.css">
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="about.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-</head>
- 
-<body>
-    <!--------------------- Header --------------------->
-    <header>
+  </head>
+
+  <body>
+
+
+  <header>
     <h1>
       <a href="../index.php"><img src="../img/logo.png" alt="logo" id="logo" /></a>
     </h1>
@@ -22,8 +20,8 @@
       <nav>
         <ul>
           <li><a href="../index.php">Home</a></li>
-          <li><a href="./service.php">services</a></li>
-          <li class="active"><a href="./about.php">About</a></li>
+          <li class="active"><a href="./service.php">services</a></li>
+          <li><a href="./about.php">About</a></li>
           <li><a href="./contactUs.php">Contact</a></li>
           <?php session_start();  
       if(isset($_SESSION["sess_user"])): ?>
@@ -58,49 +56,53 @@
   </header>
 
 
-    <div class="descrip">
-        <p>
-            When friends encourage each other and make a goal to reach, great things happen.<br>
-            Our daily mission is to help people find the right job and companies find the right candidates, in the
-            shortest timeframe. <br>
-            we are giving you the possibility to take tests to improve your skills, and the recruters to select the best
-            of you
-        </p>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">Our Services</h1>
+        <div class="border"></div>
+        <div class="services-container">
+
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service-title">Web Development</div>
+            <div class="service-desc">
+            Test4job offers a tests in Web Development languages whitsh gives you more opportunities to learn more             </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-brush"></i>
+            </div>
+            <div class="service-title">Easy platforme</div>
+            <div class="service-desc">
+          Test4job is one of the easiest platforms to pass your tests
+          </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-object-ungroup"></i>
+            </div>
+            <div class="service-title">Edit Sections</div>
+            <div class="service-desc">
+          You can in every second edit your informations in your profile also your profile picture            </div>
+          </div>
+
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="service-title">Databases</div>
+            <div class="service-desc">
+            all your test results are saved safely in our database wich allows recruters to access them and select the best candidats            </div>
+          </div>
+
+      </div>
     </div>
-    <div class="team">
-        <div class="team-section">
-
-            <h1 class="titre2">
-                who are we ?
-            </h1>
-            <span class="border"></span>
-
-            <div class="ps">
-                <a href="#p1"><img src="../img/me.jpg " alt="zeinab"></a>
-                <a href="#p2"><img src="../img/hamza.jpg " alt="hamza"></a>
-                <a href="#p3"><img src="../img/zineb.jpg" alt="zineb"></a>
-            </div>
-
-
-            <div class="section" id="p1">
-                <span class="name">ZINEB Ibnelamyn</span>
-                <span class="border"></span>
-            </div>
-
-            <div class="section" id="p2">
-                <span class="name">Hamza Mihdaf</span>
-                <span class="border"></span>
-            </div>
-
-
-            <div class="section" id="p3">
-                <span class="name">ZINEB Nidali</span>
-                <span class="border"></span>
-            </div>
-        </div>
-    </div>
-
-    <!--------------------- footer --------------------->
+          </div>
     <div class="site-footer">          
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
@@ -134,10 +136,9 @@
           </div>
 
       </div>
-    <footer>
-        <p>Test4JOB, Copyright &copy; 2020</p>
-    </footer>
 
-</body>
-
+  <footer>
+    <p>Test4JOB, Copyright &copy; 2020</p>
+  </footer>
+  </body>
 </html>

@@ -1,60 +1,103 @@
-		.container {
-			font-size: 20px;
-			font-family: Helvetica, sans-serif;
-			width: 50%;
-			height: 300px;
-			background: rgb(214, 209, 209);
-			border-radius: 25px;
-			padding: 20px;
-			margin: 70px auto 0px auto;
-		}
 
-		.flex {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-		}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
 
-		.input_container {
-			background-color: white;
-			/* vertically align icon and text inside the div*/
-			display: flex;
-			align-items: center;
-			padding-left: 20px;
-			border: 1px solid gray;
-			margin: 10px;
-		}
+body {
+    background: url(../img/company-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
-		.input_container,
-		#input_submit {
-			/* make the (email password login )box radius */
-			height: 60px;
-			border-radius: 30px;
-			width: 50%;
-		}
+.login-box {
+  width: 400px;
+  padding: 20px;
+  margin: 80px auto;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+.login-box h2 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.login-box h2 img {
+margin: 0;
+	padding: 0;
+height: 40px;
+  }
+  
 
-		.input_field {
-			/* customize the email /password tag with lighter font and some padding*/
-			color: #081816;
-			background-color: inherit;
-			width: 85%;
-			border: none;
-			font-size: 1.3rem;
-			font-weight: 400;
-			padding-left: 30px;
+.login-box .user-box {
+  position: relative;
+}
 
-		}
+.login-box .user-box .input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
 
-		#input_submit {
-			/* submit button has a different color and different padding */
-			background-color: rgb(10, 10, 190);
-			padding-left: 0;
-			font-weight: bold;
-			width: 53%;
-			color: white;
-			text-transform: uppercase;
-		}
-		
-	
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form .input_field {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #130c30;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 4px
+}
+
+.login-box .input_field:hover {
+  background: #482ddd;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f39821,
+              0 0 25px #f39821,
+              0 0 50px #f39821,
+              0 0 100px #f39821;
+}
+
+
+footer {
+    height: 45px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	bottom: 0;
+}

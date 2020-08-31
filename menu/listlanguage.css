@@ -89,6 +89,7 @@ justify-content: space-between;
 .language:hover + .name {
     display: block;
 }
+
 footer{
     left: 0;
   bottom: 0;

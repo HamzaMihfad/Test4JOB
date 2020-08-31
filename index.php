@@ -13,34 +13,34 @@
 
 <body>
   <!--------------------- Header --------------------->
+  
   <header>
     <h1>
-      <a href="./index.php"><span>TEST</span>4JOB</a>
+      <a href="./index.php"><img src="./img/logo.png" alt="logo" id="logo" /></a>
     </h1>
     <div style="display: flex; align-items: center;">
       <nav>
         <ul>
           <li class="active"><a href="">Home</a></li>
-          <li><a href="./menu/contactUs.html">Test</a></li>
-          <li><a href="./menu/about.php">About Us</a></li>
-        </ul>
-      </nav>
-      </div>
-      <div>
-      <?php session_start();  
+          <li><a href="./menu/service.php">services</a></li>
+          <li><a href="./menu/about.php">About</a></li>
+          <li><a href="./menu/contactUs.php">Contact</a></li>
+          <?php session_start();  
       if(isset($_SESSION["sess_user"])): ?>
 <div class="dropdown">
   <i class="fas fa-user fa-lg" class='dropbtn'></i>
   <div class="dropdown-content">
           <a href="./menu/profileInfo.php" id="signup">profile</a>
           <a href="./menu/logout.php" id='signup'>Logout</a>
-          </div>
+      </div>
+      </div>
  <?php elseif (isset($_SESSION["sess_company"])): ?>
   <div class="dropdown">
   <i class="fas fa-user-tie" class='dropbtn'></i>
   <div class="dropdown-content">
           <a href="./menu/logout.php" id='signup'>Logout</a>
           </div>
+ </div>
           <?php else : ?>
             <div class="dropdown">
   <p class='dropbtn' id='login'>connect</p>
@@ -48,19 +48,23 @@
   <a href="./menu/login.php" id="signup">Login</a>
   <a href="./menu/signup.php" id="signup">Sign Up</a>
           </div>
+          </div>
       <?php endif; ?>
+        </ul>
+      </nav>
       </div>
+     
     </div>
   </header>
 
   
   <!--------------------- section --------------------->
   <section>
-    <img src="./img/bg.png" alt="" id="bglanding" />
+    <img src="./img/bg.jpg" alt="" id="bglanding" />
     <div id="landing">
       <h2 id="text">
         VALUE YOUR SKILLS <br />
-        THE SMART WAY
+        &nbsp;&nbsp;THE SMART WAY
       </h2>
       <div>
 
@@ -71,11 +75,11 @@
 
         <?php if(!isset($_SESSION["sess_user"]) && !isset($_SESSION["sess_company"])): ?>
           <a href="./menu/listlanguage.php" class="candidate button"><span>Test Your Skills!</span></a>
-          <a href="./menu/companySignUp.php" class="company button"><span>Are you a Company?</span></a>
+          <a href="./menu/companySignUp.php" class="company button"><span>Are You a Company?</span></a>
         <?php endif; ?>
 
         <?php if(isset($_SESSION["sess_company"])): ?>
-        <a href="./menu/candidatelist.html" class="company button"><span>View Test Results?</span></a>
+        <a href="./menu/candidatelist.php" class="company button"><span>View Test Results?</span></a>
         <?php endif; ?>
 
       </div>
@@ -144,9 +148,6 @@
           </div>
 
       </div>
-      <div class="separator"></div>
-
-  <!--------------------- footer --------------------->
 
   <footer>
     <p>Test4JOB, Copyright &copy; 2020</p>

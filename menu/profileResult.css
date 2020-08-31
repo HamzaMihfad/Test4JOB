@@ -28,7 +28,7 @@ body{
     justify-content: center;
     text-align: center;    
 }
-img{
+.image-container img{
     max-width: 150px;
     height: 150px;
     border-radius: 50%;

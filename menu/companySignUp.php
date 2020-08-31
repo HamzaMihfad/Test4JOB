@@ -21,57 +21,47 @@ if(isset($_SESSION["sess_user"]) || (isset($_SESSION["sess_company"])))
 
 <body>
 	<!--------------------- Header --------------------->
+	
 	<header>
-		<h1>
-		  <a href="../index.php"><span>TEST</span>4JOB</a>
-		</h1>
-		<div style="display: flex; align-items: center;">
-		  <nav>
-			<ul>
-			  <li class="active"><a href="">Home</a></li>
-			  <li><a href="./profile.php">Test</a></li>
-			  <li><a href="./about.php">About Us</a></li>
-			</ul>
-		  </nav>
-		  </div>
-		  <div>
-		  <?php  
-		  if(!isset($_SESSION["sess_company"])): ?>
-	<div class="dropdown">
+    <h1>
+      <a href="../index.php"><img src="../img/logo.png" alt="logo" id="logo" /></a>
+    </h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <ul>
+        <li><a href="../index.php">Home</a></li>
+          <li><a href="./service.php">services</a></li>
+          <li><a href="./about.php">About</a></li>
+          <li><a href="./contactUs.php">Contact</a></li>
+          <div class="dropdown">
 	  <p class='dropbtn' id='login'>connect</p>
 	  <div class="dropdown-content">
 	  <a href="./login.php" id="signup">Login</a>
 	  <a href="./signup.php" id="signup">Sign Up</a>
 			  </div>
-	 <?php else: ?>
-			<div class="dropdown">
-	  <i class="fas fa-user fa-lg" class='dropbtn'></i>
-	  <div class="dropdown-content">
-			  <a href="./profileInfo.php" id="signup">profile</a>
-			  <a href="./logout.php" id='signup'>Logout</a>
-			  </div>
-		  <?php endif; ?>
-		  </div>
-		</div>
-	  </header>
+        </ul>
+      </nav>
+    </div>
+</header>
 	  <!-------->
-	<div class="container">
-		<h1 style="color: #3c61b9; margin: 10px;">Company info: </h1>
-		<form method="POST" action="">
-		<div class="flex">
+    <div class="login-box">
+      <div>
+       <h2> <img src="../img/logo.png" alt="logo" id="logo" /> </h2>
+</div>
+  <form>
+    <div class="user-box">
+      <input class='input' type="text" name="company_name" required>
+      <label>Company Name</label>
+    </div>
+    <div class="user-box">
+      <input class='input' type="password" name="company_id" required="">
+      <label>Company ID</label>
+    </div>
+    <input type="submit" name='submit' value="Continue" class='input_field' style="cursor: pointer;">
+    </form>
+</div>
 
-			<div class="input_container">
-				<input placeholder="Company name" name="company_name" class='input_field' required>
-			</div>
-			<div class="input_container">
-				<input placeholder="Company id" name="company_id" class='input_field' required>
-			</div>
-			<input type="submit" name='submit' value="Continue" id='input_submit' class='input_field' style="cursor: pointer;">
-		</div>
-
-		<div>
-
-		<?php
+    <?php
 if(isset($_POST["submit"]))
 { 
 if(!empty($_POST['company_name']) && !empty($_POST['company_id'])) 
@@ -121,13 +111,45 @@ header("Location: ../index.php");
 }
 }
 	?>
-		</div>
-		</form>
-	</div>
+ 
+	
+		
 
 	<!--------------------- footer --------------------->
+	<div class="site-footer">          
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Test4Code is an initiative  to help the upcoming programmers with finding a propriate job. 
+              test4job focuses on providing the most efficient tests.
+               We will help programmers build up concepts in different programming languages that include
+                JavaScript, SQL, HTML, CSS, PHP, SQL ...
+              Also we give the recuters the possibility to find their wanted condidats </p>
+          </div>
 
-	<footer style="position: absolute; width: 100%;">
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a >JS</a></li>
+              <li><a >HTML</a></li>
+              <li><a >PHP</a></li>
+              <li><a>SQL</a></li>
+            
+            </ul>
+          </div>
+ 
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+          <h6>Contact Us</h6>
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><img src="https://img.icons8.com/color/40/000000/facebook-new.png"/></a></li>
+              <li><a class="twitter" href="#"><img src="https://img.icons8.com/color/39/000000/twitter.png"/></a></li>
+              <li><a class="GitHub" href="#"><img src="https://img.icons8.com/color/39/000000/github.png"/></a></li>
+              <li><a class="linkedin" href="#"><img src="https://img.icons8.com/color/39/000000/linkedin-circled.png"/></a></li>   
+            </ul>
+          </div>
+
+    </div>  
+	<footer style="width: 100%;">
 		<p>Test4JOB, Copyright &copy; 2020</p>
 	</footer>
 

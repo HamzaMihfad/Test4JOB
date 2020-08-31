@@ -35,28 +35,27 @@ $row = mysqli_fetch_array($result);
 <body onload="setup()">
     <!--------------------- Header --------------------->
     <header>
-        <h1>
-          <a href="../index.php"><span>TEST</span>4JOB</a>
-        </h1>
-        <div style="display: flex; align-items: center;">
-          <nav>
-            <ul>
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="./profile.php">Test</a></li>
-              <li><a href="./about.php">About Us</a></li>
-            </ul>
-          </nav>
-          </div>
-          <div>
-          
-            <div class="dropdown">
-      <i class="fas fa-user fa-lg" class='dropbtn'></i>
-      <div class="dropdown-content">
-              <a href="./profileInfo.php" id="signup">profile</a>
-              <a href="./logout.php" id='signup'>Logout</a>
-              </div>
-        </div>
-      </header>
+    <h1>
+      <a href="../index.php"><img src="../img/logo.png" alt="logo" id="logo" /></a>
+    </h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <ul>
+        <li><a href="../index.php">Home</a></li>
+          <li><a href="./service.php">services</a></li>
+          <li><a href="./about.php">About</a></li>
+          <li><a href="./contactUs.php">Contact</a></li>
+          <div class="dropdown">
+  <i class="fas fa-user fa-lg" class='dropbtn'></i>
+  <div class="dropdown-content">
+          <a href="./profileInfo.php" id="signup">profile</a>
+          <a href="./logout.php" id='signup'>Logout</a>
+      </div>
+      </div>
+        </ul>
+      </nav>
+    </div>
+</header>
     <!--------------------- profile --------------------->
     <div class="profile-container">
         <div id="card">
@@ -157,7 +156,7 @@ if(isset($_POST["submit"]))
                     <!-- <div class="pic">
                         <span class="activity">Account ID : </span>
                     </div> -->
-                    <div style="display: flex; align-items: center;">
+                    <div style="display: flex; align-items: center;" class='personal'>
                         <p style="font-weight: bold; color: gray;">Personal Information</p>
                         <div style="width: 230px; height: 1px; background: gray; margin: 5px;"></div>
                     </div>
@@ -188,7 +187,15 @@ if(isset($_POST["submit"]))
                         <?php
                 $user = $row['last_name'];
                echo "<label>".'<span class="label">Last Name :</span>
-               &nbsp;'.$user."</label>" ?>                        </div>
+               &nbsp;'.$user."</label>" ?>                
+                       </div>
+
+                       <div>
+                        <?php
+                $user = $row['age'];
+               echo "<label>".'<span class="label">Age :</span>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$user."</label>" ?>                
+                       </div>
                     </div>
                     <div>
                     <?php
@@ -210,8 +217,24 @@ if(isset($_POST["submit"]))
                echo "<label>".'<span class="label">State :</span>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$user."</label><br>" ?>
                         </div>
-                        
-
+                        <div>
+                        <?php
+                $user = $row['phone'];
+               echo "<label>".'<span class="label">Phone Number :</span>
+               &nbsp;'.$user."</label><br>" ?>
+                        </div>
+                        <div>
+                        <?php
+                $user = $row['whatssap'];
+               echo "<label>".'<span class="label">Whatssap Number :</span>
+               &nbsp;'.$user."</label><br>" ?>
+                        </div>
+                        <div>
+                        <?php
+                $user = $row['URL'];
+               echo "<label>".'<span class="label">Linkdein Url :</span>
+               &nbsp;'.$user."</label><br>" ?>
+                        </div>
                 </div>
             </div>
             <div style="display: flex; align-items: center; justify-content: center;">
@@ -225,6 +248,39 @@ if(isset($_POST["submit"]))
     </div>
     </div>
 
+    <div class="site-footer">          
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Test4Code is an initiative  to help the upcoming programmers with finding a propriate job. 
+              test4job focuses on providing the most efficient tests.
+               We will help programmers build up concepts in different programming languages that include
+                JavaScript, SQL, HTML, CSS, PHP, SQL ...
+              Also we give the recuters the possibility to find their wanted condidats </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a >JS</a></li>
+              <li><a >HTML</a></li>
+              <li><a >PHP</a></li>
+              <li><a>SQL</a></li>
+            
+            </ul>
+          </div>
+ 
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+          <h6>Contact Us</h6>
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><img src="https://img.icons8.com/color/40/000000/facebook-new.png"/></a></li>
+              <li><a class="twitter" href="#"><img src="https://img.icons8.com/color/39/000000/twitter.png"/></a></li>
+              <li><a class="GitHub" href="#"><img src="https://img.icons8.com/color/39/000000/github.png"/></a></li>
+              <li><a class="linkedin" href="#"><img src="https://img.icons8.com/color/39/000000/linkedin-circled.png"/></a></li>   
+            </ul>
+          </div>
+
+      </div>
     <footer>
         <p>Test4JOB, Copyright &copy; 2020</p>
     </footer>

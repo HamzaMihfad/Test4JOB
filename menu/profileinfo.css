@@ -1,4 +1,4 @@
-body,
+* body
 html {
     padding: 0;
     margin: 0;
@@ -16,16 +16,16 @@ body{
      color : red;
   }
 .profile-container{
-    width: 100%;
     margin: 20px;
     display: flex;
     flex-direction: row;  
     justify-content: space-evenly;  
 }
 .profile-menu{
-    padding: 20px 5px 0 0 ;
+    padding: 20px 5px 0 0 ; 
     width: 49%;
     border-radius: 15px;
+    height: 80%;
 }
 .image-container{
     margin: auto;
@@ -33,7 +33,7 @@ body{
     justify-content: center;
     text-align: center;    
 }
-img{
+.image-container img{
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -94,6 +94,10 @@ img{
 a {
     text-decoration: none;
     color:#7c7878;
+}
+.personal{
+    padding: 10px 0;
+    padding-bottom: 20px;
 }
 #noactive {
     font-size: 16px;
