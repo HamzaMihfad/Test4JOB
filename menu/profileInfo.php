@@ -229,7 +229,7 @@ if(isset($_POST["submit"]))
                         <div>
                         <?php
                 $user = $row['URL'];
-               echo "<label>".'<span class="label">Linkdein Url :</span>
+               echo "<label>".'<span class="label">Linkedin Url :</span>
                &nbsp;'.$user."</label><br>" ?>
                         </div>
                 </div>

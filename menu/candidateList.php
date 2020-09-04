@@ -88,7 +88,6 @@ $i = 1;
 			<div class="container">
 		
 			<div class="card">
-			<p>Candidat '."$i".'</p>
 				<h3 style="color: white; text-shadow: 0px 2px 2px #615e5e;">'."$row[username]".'</h3>
 			</div>
 

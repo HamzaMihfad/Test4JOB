@@ -224,7 +224,7 @@ else {
                } ?>
             
 
-            <p class="contact"><label for="phone">Linkdin URL</label></p> 
+            <p class="contact"><label for="phone">Linkedin URL</label></p> 
             <?php
                     $user = $row['URL'] ;
                     if ( $user == '' )
