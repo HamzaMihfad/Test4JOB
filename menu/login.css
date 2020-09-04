@@ -7,29 +7,20 @@
     --icon_color: #081816;
 }
 
-* {
+* html body {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
-body {
-    /* make the body full height*/
-    height: 100vh;
-    /* set our custom font */
-    font-family: 'Roboto',
-        sans-serif;
-    /* create a linear gradient*/
-}
+ #icon{
+     margin-left: 10px;
+ }
 
 #form_wrapper {
     width: 800px;
-    height: 500px;
-    /* this will help us center it*/
+    height: 450px;
     margin: 50px auto;
-    background-color: var(--form_bg);
     border-radius: 50px;
-    /* make it a grid container*/
     display: grid;
     /* separate the login box in two colomns equals*/
     grid-template-columns: 1fr 1fr;
@@ -37,7 +28,9 @@ body {
     grid-gap: 5vw;
     /* add some padding around */
     padding: 5vh 15px;
-    background: url(../img/bgl.jpg);
+    grid-gap: 5vw;
+    padding: 5vh 15px;
+    background: url(../img/signupBG.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -58,10 +51,9 @@ body {
 #form_right {
     display: grid;
     /* single column layout */
-    grid-template-columns: 1fr;
     /* have some gap in between elements*/
     /* grid-gap: 20px; */
-    padding: 10% 5%;
+    padding: 1% 5%;
 }
 
 .input_container {
@@ -69,7 +61,7 @@ body {
     /* vertically align icon and text inside the div*/
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 10px;
     border: 1px solid gray;
 }
 
@@ -78,22 +70,23 @@ body {
 .input_container,
 #input_submit {
     /* make the (email password login )box radius */
-    height: 60px;
+    height: 50px;
     border-radius: 30px;
-    width: 100%;
+    width: 90%;
 }
 
 .input_field {
     /* customize the email /password tag with lighter font and some padding*/
     color: var(--icon_color);
     background-color: inherit;
-    width: 90%;
     border: none;
     font-size: 1.3rem;
-    font-weight: 400;
-    padding-left: 30px;
+    font-weight: 300;
+    padding-left: 10px;
+    width: 80%;
 
 }
+
 
 .input_field:hover,
 .input_field:focus {
@@ -108,6 +101,11 @@ body {
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    width: 50%;
+    height: 40px;
+    border-radius: 15px;
+
+justify-self: center;
 }
 
 #input_submit:hover {
@@ -127,7 +125,6 @@ span {
 #create_account {
     display: block;
     position: relative;
-    top: 10px;
 }
 
 a {
@@ -140,9 +137,8 @@ a {
 a:hover {
     color: var(--submit_hover);
 }
-
 footer {
-    height: 55px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
