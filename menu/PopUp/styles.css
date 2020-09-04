@@ -35,11 +35,19 @@ button {
     max-width: 600px;
     margin: 10% auto;
     background: white;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     border-radius: 15px;
 }
 
+.popup-content{
+    margin: 10px 30px 
+}
+
+.popup-content h2 {
+   color:#f4511e;
+    margin-bottom: 20px;
+}
 .popup a {
     text-decoration: none;
     border-radius: 5px;

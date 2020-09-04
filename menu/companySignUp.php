@@ -48,19 +48,18 @@ if(isset($_SESSION["sess_user"]) || (isset($_SESSION["sess_company"])))
       <div>
        <h2> <img src="../img/logo.png" alt="logo" id="logo" /> </h2>
 </div>
-  <form>
+  <form method="POST">
     <div class="user-box">
-      <input class='input' type="text" name="company_name" required>
+      <input class='input' type="text" name="company_name" autocomplete="off" required>
       <label>Company Name</label>
     </div>
     <div class="user-box">
-      <input class='input' type="password" name="company_id" required="">
+      <input class='input' type="text" name="company_id" autocomplete="off" required="">
       <label>Company ID</label>
     </div>
+    <div style="display: flex; justify-content: center; width: 100%;">
     <input type="submit" name='submit' value="Continue" class='input_field' style="cursor: pointer;">
-    </form>
-</div>
-
+    </div>
     <?php
 if(isset($_POST["submit"]))
 { 
@@ -112,7 +111,9 @@ header("Location: ../index.php");
 }
 	?>
  
-	
+ </form>
+</div>
+
 		
 
 	<!--------------------- footer --------------------->

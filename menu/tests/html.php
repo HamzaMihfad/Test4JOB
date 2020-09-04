@@ -23,9 +23,9 @@ if(!isset($_SESSION["sess_user"])){
     <title>Test4Job</title>
     <link rel="stylesheet" href="../../style/style.css">
     <link rel="stylesheet" href="../../style/test.css">
+    <link rel="stylesheet" href="../PopUp/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="../../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <link rel="stylesheet" href="../PopUp/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 </head>
@@ -60,9 +60,9 @@ if(!isset($_SESSION["sess_user"])){
 
     <div style="height: 98vh;">
         <div class="popup-wrapper">
-            <div class="popup">
+            <div class="popup" >
                 <div class="popup-content">
-                    <h2 style="color:#f4511e;">Are you ready?</h2>
+                    <h2>Are you ready?</h2>
                     <ul style="text-align: left; line-height: 23px;">
                         <li>
                             10 multiple choice questions will be asked.
@@ -99,7 +99,7 @@ if(!isset($_SESSION["sess_user"])){
 
         <section id="test">
             <div class="testheader">
-                <img src="../img/html.png" alt="">
+                <img src="../../img/html.png" alt="">
                 <div>
                     <h3><span id="lang">HTML</span> Test :</h3>
                     <p> The exercises relate to HTML5 tags
