@@ -147,8 +147,8 @@ $row = mysqli_fetch_array($result);
              <a href="./listlanguage.php" class="newtest button"><span>Test Your Skills again!</span></a>
             </div>
         </div> 
-       
-        
+        </div> 
+       <div class="container">
         <div class="card">
             <div class="box">
                 <div class="percent">

@@ -25,6 +25,27 @@ $row = mysqli_fetch_array($result);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="../icons/css/all.css" rel="stylesheet"> <!--load all styles -->
 
+    <style>
+        .img1{
+        background: #0fdd4f;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+    }
+
+    .img2{
+        background: none;
+        color: #0fdd4f;
+        padding: 0px 4px;
+        border-radius: 5px;
+        font-size: 13px;
+        border: 2px solid #0fdd4f;
+    }
+    </style>
+
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> -->
  
 </head>
@@ -71,9 +92,9 @@ $row = mysqli_fetch_array($result);
                             <img src="../img/avatar.png"  alt="avatar">
                             <?php endif?>
                         <form action=" " method="POST" enctype="multipart/form-data" id="formid">
-                        <label class="custom-file-upload">
-                        <input type="file" name='upload' /><i class="fas fa-camera" id='cam_icon'></i></label>
-                        <input class='btn' type='submit' name='submit' value='save'></button>
+                        <label class="custom-file-upload img2">
+                        <input type="file" name='upload' />Upload image <i class="fas fa-camera" id='cam_icon'></i></label>
+                        <input class='btn img1' type='submit' name='submit' value='Save'></button>
                     </form>
                         <?php 
  
@@ -139,7 +160,7 @@ if(isset($_POST["submit"]))
                     </div>
                     <ul class="ul">
                         <li class="li" id="active">Informations</li>
-                        <a href="./profileresult.php"><li class="li" id="noactive">Tests</li></a>
+                        <a href="./profileResult.php"><li class="li" id="noactive">Tests</li></a>
                         <li class="li" id="description">Description </li>
                         <div class="description">  <?php
                 $user = $row['description'];
