@@ -79,7 +79,7 @@
         <?php endif; ?>
 
         <?php if(isset($_SESSION["sess_company"])): ?>
-        <a href="./menu/candidatelist.php" class="company button"><span>View Test Results?</span></a>
+        <a href="./menu/candidateList.php" class="company button"><span>View Test Results?</span></a>
         <?php endif; ?>
 
       </div>

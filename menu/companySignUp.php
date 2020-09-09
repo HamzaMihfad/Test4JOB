@@ -68,7 +68,7 @@ if(!empty($_POST['company_name']) && !empty($_POST['company_id']))
     $name=$_POST['company_name'];  
     $id=$_POST['company_id']; 
     
-    $conn=('localhost','typiortx_test4job', 'test4job', 'typiortx_Test4JOB');
+    $conn=mysqli_connect('localhost','typiortx_test4job', 'test4job', 'typiortx_Test4JOB');
   
     $query=mysqli_query($conn,"SELECT * FROM company_registration WHERE company_name='".$name."' AND company_id='".$id."'");  
     $queryOR=mysqli_query($conn,"SELECT * FROM company_registration WHERE company_name='".$name."' OR company_id='".$id."'");  

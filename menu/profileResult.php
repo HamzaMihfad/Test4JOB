@@ -5,6 +5,9 @@ if(!isset($_SESSION["sess_user"])){
 }  
 
 else {
+$servername = "localhost";
+$username = "root";
+$password = "";
 $connection = mysqli_connect('localhost','typiortx_test4job', 'test4job', 'typiortx_Test4JOB');
 $result = mysqli_query($connection,"SELECT * FROM user_info WHERE username = '".$_SESSION['sess_user']."'");
 $row = mysqli_fetch_array($result);
@@ -110,7 +113,7 @@ $row = mysqli_fetch_array($result);
                         $reslut = mysqli_query($connection,"SELECT htmlresult FROM results WHERE username = '$username'");
                         $htmlscore = mysqli_fetch_array($reslut)['htmlresult'];
                         if ($htmlscore == -1){
-                            echo "<h2>00<span>%</span></h2>";
+                            echo "<h2>--<span></span></h2>";
                         }
                         else
                         echo "<h2>".$htmlscore."0<span>%</span></h2>";
@@ -136,7 +139,7 @@ $row = mysqli_fetch_array($result);
                         $reslut = mysqli_query($connection,"SELECT javascriptresult FROM results WHERE username = '$username'");
                         $javascriptscore = mysqli_fetch_array($reslut)['javascriptresult'];
                         if ($javascriptscore == -1){
-                            echo "<h2>00<span>%</span></h2>";
+                            echo "<h2>--<span></span></h2>";
                         }
                         else
                         echo "<h2>".$javascriptscore."0<span>%</span></h2>";
@@ -147,8 +150,8 @@ $row = mysqli_fetch_array($result);
              <a href="./listlanguage.php" class="newtest button"><span>Test Your Skills again!</span></a>
             </div>
         </div> 
-        </div> 
-       <div class="container">
+       
+        
         <div class="card">
             <div class="box">
                 <div class="percent">
@@ -164,7 +167,7 @@ $row = mysqli_fetch_array($result);
                         $reslut = mysqli_query($connection,"SELECT sqlresult FROM results WHERE username = '$username'");
                         $sqlscore = mysqli_fetch_array($reslut)['sqlresult'];
                         if ($sqlscore == -1){
-                            echo "<h2>00<span>%</span></h2>";
+                            echo "<h2>--<span></span></h2>";
                         }
                         else
                         echo "<h2>".$sqlscore."0<span>%</span></h2>";
@@ -190,7 +193,7 @@ $row = mysqli_fetch_array($result);
                         $reslut = mysqli_query($connection,"SELECT phpresult FROM results WHERE username = '$username'");
                         $phpscore = mysqli_fetch_array($reslut)['phpresult'];
                         if ($phpscore == -1){
-                            echo "<h2>00<span>%</span></h2>";
+                            echo "<h2>--<span></span></h2>";
                         }
                         else
                         echo "<h2>".$phpscore."0<span>%</span></h2>";
