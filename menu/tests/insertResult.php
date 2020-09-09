@@ -6,7 +6,7 @@ session_start();
     else {
       try
       {
-        $connection = mysqli_connect('localhost','root', '', 'test4job');
+        $connection = mysqli_connect('localhost','typiortx_test4job', 'test4job', 'typiortx_Test4JOB');
       }
       catch(Exception $e)
       {

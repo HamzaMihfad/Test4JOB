@@ -5,7 +5,7 @@ if(!isset($_SESSION["sess_user"])){
 }  
     try
     {
-        $connection = mysqli_connect('localhost','root', '', 'test4job');
+        $connection = mysqli_connect('localhost','typiortx_test4job', 'test4job', 'typiortx_Test4JOB');
     }
     catch(Exception $e)
     {
@@ -99,7 +99,7 @@ if(!isset($_SESSION["sess_user"])){
 
         <section id="test">
             <div class="testheader">
-                <img src="../../img/html.png" alt="">
+                <img src="../../img/sql.png" alt="">
                 <div>
                     <h3><span id="lang">HTML</span> Test :</h3>
                     <p> The exercises relate to HTML5 tags
