@@ -99,7 +99,7 @@ if(!isset($_SESSION["sess_user"])){
 
         <section id="test">
             <div class="testheader">
-                <img src="../../img/sql.png" alt="">
+                <img src="../../img/html.png" alt="">
                 <div>
                     <h3><span id="lang">HTML</span> Test :</h3>
                     <p> The exercises relate to HTML5 tags
